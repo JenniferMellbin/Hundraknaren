@@ -20,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.PaddingValues
+import android.util.Log
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +49,8 @@ fun Hundraknare() {
         Button(
             onClick = {
                 antal = antal + 1
+                Log.d("Hundraknaren", "Antal träningspass: $antal")
+
             },
             modifier = Modifier.padding(16.dp),
             contentPadding = androidx.compose.foundation.layout.PaddingValues(
