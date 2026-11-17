@@ -27,6 +27,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.foundation.background
+import androidx.compose.material3.OutlinedTextFieldDefaults.contentPadding
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.ButtonDefaults
+
+
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,18 +84,33 @@ fun Hundraknare() {
             onClick = {
                 antal = antal + 1
                 Log.d("Hundraknaren", "Antal träningspass: $antal")
-
             },
             modifier = Modifier.padding(16.dp),
-            contentPadding = androidx.compose.foundation.layout.PaddingValues(
+            contentPadding = PaddingValues(
                 horizontal = 32.dp,
                 vertical = 20.dp
             )
         ) {
             Text("Tryck här")
         }
+        OutlinedButton(
+            onClick = {
+                antal = 0
+            },
+            colors = ButtonDefaults.outlinedButtonColors(
+                containerColor = Color.Transparent,
+                contentColor = Color(0xFF8B3A62)
+            ),
+            border = androidx.compose.foundation.BorderStroke(
+                1.dp,
+                Color(0xFF8B3A62)
+            )
+        ) {
+            Text("Nollställ räknaren")
+        }
     }
 }
+
 
 
 
