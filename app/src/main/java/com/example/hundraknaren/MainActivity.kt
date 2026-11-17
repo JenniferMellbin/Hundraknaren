@@ -21,6 +21,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.PaddingValues
 import android.util.Log
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,16 +39,28 @@ class MainActivity : ComponentActivity() {
 fun Hundraknare() {
     var antal by remember { mutableStateOf(0) }
 
-    Text("Min hundräknare 🐾")
-    Text("Antal träningspass: $antal")
 
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("Min hundräknare 🐾")
-        Text("Antal träningspass: $antal")
+        Text(
+            text = "Min hundräknare 🐾",
+            fontSize = 30.sp,
+            fontWeight = FontWeight.Bold,
+            textAlign = TextAlign.Center
+        )
+
+        Text(
+            text = "Antal träningspass: $antal",
+            fontSize = 22.sp,
+            fontWeight = FontWeight.Medium,
+            textAlign = TextAlign.Center
+        )
+
+
+
         Button(
             onClick = {
                 antal = antal + 1
